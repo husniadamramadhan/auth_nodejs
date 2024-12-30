@@ -21,8 +21,11 @@ router.post('/register', async(req,res,next)=>{
             
         const user = new User(result)
         const savedUser = await user.save()
+        console.log('Signing access token...');
         const accessToken = await signAccessToken(savedUser.id)
+        console.log('Access token signed successfully:', accessToken);
         const refreshToken = await signRefreshToken(savedUser.id)
+        console.log('Refresh token signed successfully:', refreshToken);
 
         res.send({accessToken, refreshToken})
 

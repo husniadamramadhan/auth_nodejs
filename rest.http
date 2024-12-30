@@ -1,5 +1,5 @@
 GET http://localhost:3000
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzUwMDE2NTUsImV4cCI6MTczNTAwMTY3NSwiYXVkIjoiNjc2YTA1MmZiZWIzNTI1ZTExZDNjOGViIiwiaXNzIjoiYWRhbS5jb20ifQ.enIQiHi1sHRi_VrVcUjv4rlcZQYBJiU-qOxxT1mCumg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzUwMDI0MTksImV4cCI6MTczNTAwMjQzOSwiYXVkIjoiNjc2YTA1MmZiZWIzNTI1ZTExZDNjOGViIiwiaXNzIjoiYWRhbS5jb20ifQ.SNNuJQLJWBPDdTmjLm8de_b60Jd3LzjRloIZBh-78cc
 
 
 ###LOGIN
@@ -7,7 +7,7 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "hhbyuvusniadhgham109@gmail.com",
+    "email": "husniadam119@gmail.com",
     "password": "123456"
 }
 ###router
@@ -15,7 +15,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "email": "hhbyuvusniadhgham109@gmail.com",
+    "email": "husniadam119@gmail.com",
     "password": "123456"
 }
 ###router
@@ -23,5 +23,5 @@ POST http://localhost:3000/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzUwMDE1NzAsImV4cCI6MTc2NjU1OTE3MCwiYXVkIjoiNjc2YTA1MmZiZWIzNTI1ZTExZDNjOGViIiwiaXNzIjoiYWRhbS5jb20ifQ.r2vdmM3nnlJ2gXbDKe8mSxND_IvAGnB1DhgJZZLPMOg"
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzU0NTQ1MzAsImV4cCI6MTc2NzAxMjEzMCwiYXVkIjoiNjc3MGRkNTU3NGFkYWMzNjRmMTFmMTA1IiwiaXNzIjoiYWRhbS5jb20ifQ.43Qo5srXPlXIi5kYeh8wZMq3S4wTA7l8bFuevqt6Zxc"
 }
