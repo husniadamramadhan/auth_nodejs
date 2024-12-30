@@ -12,6 +12,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         require: true
+    },
+    username: {
+        type: String,
+        unique: true
     }
 })
 
@@ -20,6 +24,11 @@ UserSchema.pre('save', async function (next) {
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(this.password, salt)
         this.password = hashedPassword
+        //generate username
+        if(!this.username){
+            this.username = this.email.split('@')[0]
+        }
+
         next()
     }catch(error){
         next(error)

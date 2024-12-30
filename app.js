@@ -7,6 +7,7 @@ const {verifyAccessToken} = require('./helpers/jwt_helper')
 require('./helpers/init_redis')
 
 const Authroute = require('./Routes/Auth.route')
+const Inforoute = require('./Routes/Info.route')
 
 const app = express()
 app.use(morgan('dev'))
@@ -18,7 +19,8 @@ app.get('/', verifyAccessToken, async (req,res,next)=>{
     res.send("Hello from Express")
 })
 
-app.use('/auth', Authroute)
+app.use('/api/auth', Authroute)
+app.use('/api/info', Inforoute)
 
 app.use(async (req,res,next)=>{
     next(createError.NotFound())
