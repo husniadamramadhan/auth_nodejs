@@ -46,7 +46,7 @@ module.exports = {
         const payload = {}
         const secret = process.env.REFRESH_TOKEN_SECRET
         const option = {
-            expiresIn: "1m",
+            expiresIn: "30d",
             issuer: "adam.com",
             audience: userId
         }

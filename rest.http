@@ -1,9 +1,9 @@
-GET http://localhost:3000/info/profile
+GET http://localhost:3000/api/info/profile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzU1MzY0NjQsImV4cCI6MTczNTYyMjg2NCwiYXVkIjoiNjc3MjJlZTZhM2JkNTY3NDI1ZmQyNGVjIiwiaXNzIjoiYWRhbS5jb20ifQ.J2xwHICm6gwCEcyb_5ujBx5e9iLnQTiiYhfUcGeB-p4
 
 
 ###LOGIN
-POST http://localhost:3000/auth/login
+POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
@@ -11,17 +11,17 @@ Content-Type: application/json
     "password": "123456"
 }
 ###router
-POST http://localhost:3000/auth/register
+POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-    "email": "jhondoe@gmail.com",
+    "email": "jhondoe1@gmail.com",
     "password": "123456"
 }
 ###router
-POST http://localhost:3000/auth/refresh-token
+POST http://localhost:3000/api/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzU1MzY0NjQsImV4cCI6MTczNTUzNjUyNCwiYXVkIjoiNjc3MjJlZTZhM2JkNTY3NDI1ZmQyNGVjIiwiaXNzIjoiYWRhbS5jb20ifQ.HEP0NbKsxBh2L2TmaTO1gXHVDMru_gVixoLNlip7ttM"
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzU2Njg5NDAsImV4cCI6MTczNTY2OTAwMCwiYXVkIjoiNjc3MjJlZTZhM2JkNTY3NDI1ZmQyNGVjIiwiaXNzIjoiYWRhbS5jb20ifQ.iamVUEm_blRehbtnjovuw37bPhi21Ew2da18UZ1cBtk"
 }

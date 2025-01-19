@@ -49,7 +49,7 @@ Make sure you have the following installed:
 
    ```env
    PORT=3000
-   MONGO_URI=<your-mongodb-connection-string>
+   MONGODB_URI=<your-mongodb-connection-string>
    DB_NAME=<your-name-DB>
    ACCESS_TOKEN_SECRET=<your-Access-secret>
    REFRESH_TOKEN_SECRET=<your-Refresh-secret>
