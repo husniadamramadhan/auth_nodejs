@@ -53,6 +53,8 @@ Make sure you have the following installed:
    DB_NAME=<your-name-DB>
    ACCESS_TOKEN_SECRET=<your-Access-secret>
    REFRESH_TOKEN_SECRET=<your-Refresh-secret>
+   REDIS_HOST=<your-host-redis>
+   REDIS_PORT=<your-port-redis>
    ```
 
 4. Start the server:
