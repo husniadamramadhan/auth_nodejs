@@ -121,6 +121,20 @@ The server will run on `http://localhost:3000` by default.
   }
   ```
 
+#### 4. **Logout**
+
+- **DELETE** `/api/auth/logout`
+- **Body:**
+  ```json
+  {
+    "refreshToken": "<your-refresh-token>"
+  }
+  ```
+- **Response:**
+  ```json
+  {}
+  ```
+
 ### Protected Endpoints
 
 #### 1. **Get user profile**
