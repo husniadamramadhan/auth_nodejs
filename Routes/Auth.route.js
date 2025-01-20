@@ -8,6 +8,7 @@ const {
     signRefreshToken, 
     verifyRefreshToken
 } = require('../helpers/jwt_helper')
+const client = require('../helpers/init_redis')
 
 router.post('/register', async(req,res,next)=>{
     try {
@@ -69,8 +70,21 @@ router.post('/refresh-token', async(req,res,next)=>{
     }
 })
 
-router.post('/logout', async(req,res,next)=>{
-    res.send('logout route')
+router.delete('/logout', async(req,res,next)=>{
+    try{
+        const {refreshToken} = req.body
+        if (!refreshToken) {
+            throw createError.BadRequest('Refresh Token is Required')
+        }
+        const userId = await verifyRefreshToken(refreshToken)
+        const result = await client.del(userId)
+        if (result ===0){
+            throw createError.NotFound('Token not found in the database')
+        }
+        res.sendStatus(204)
+    }catch(error){
+        next(error)
+    }
 })
 
 module.exports = router
