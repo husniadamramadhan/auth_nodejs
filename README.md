@@ -47,7 +47,7 @@ Make sure you have the following installed:
    docker-compose up -d
    ```
 
-The server will run on `http://localhost:3000` by default.
+The server will run on `http://localhost:80 by default.
 
 ## API Endpoints
 
