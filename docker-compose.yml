@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auth_nodejs
+    ports:
+      - "80:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=<your-mongodb-URI>
+      - DB_NAME=<your-DB-name>
+      - ACCESS_TOKEN_SECRET=<your-AccessToken-secret>
+      - REFRESH_TOKEN_SECRET=<your-RefreshToken-secret>
+      - REDIS_HOST=<your-redis-host>
+      - REDIS_PORT=<your-redis-port>
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - mynetwork
+
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017" # Map port MongoDB
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mynetwork
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379" # Map port Redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - mynetwork
+
+volumes:
+  mongo_data:
+  redis_data:
+
+networks:
+  mynetwork:
+    driver: bridge
