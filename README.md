@@ -39,27 +39,12 @@ Make sure you have the following installed:
    cd <repository-folder>
    ```
 
-2. Install dependencies:
+2. Change env in docker-compose.yml:
+
+3. Jalankan docker-compose:
 
    ```bash
-   npm install
-   ```
-
-3. Create a `.env` file in the root directory and add the following environment variables:
-
-   ```env
-   PORT=3000
-   MONGODB_URI=<your-mongodb-connection-string>
-   DB_NAME=<your-name-DB>
-   ACCESS_TOKEN_SECRET=<your-Access-secret>
-   REFRESH_TOKEN_SECRET=<your-Refresh-secret>
-   REDIS_HOST=<your-host-redis>
-   REDIS_PORT=<your-port-redis>
-   ```
-
-4. Start the server:
-   ```bash
-   npm start
+   docker-compose up -d
    ```
 
 The server will run on `http://localhost:3000` by default.
