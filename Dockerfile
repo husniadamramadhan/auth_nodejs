@@ -5,10 +5,10 @@ FROM node:18
 WORKDIR /
 
 #Salin Package
-COPY Package*json ./
+COPY package*.json ./
 
 #Install Dependency
-RUN npm Install
+RUN npm install
 
 #Copy Code
 COPY . .
