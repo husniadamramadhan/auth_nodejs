@@ -35,8 +35,8 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/husniadamramadhan/auth_nodejs.git
+   cd auth_nodejs
    ```
 
 2. Change env in docker-compose.yml:
@@ -48,6 +48,51 @@ Make sure you have the following installed:
    ```
 
 The server will run on `http://localhost:80 by default.
+
+## Installation on GKE
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/husniadamramadhan/auth_nodejs.git
+   cd auth_nodejs
+   ```
+
+2. Create a Cluster
+
+```bash
+gcloud container clusters create mycluster --num-nodes=3 --zone=us-central1-a
+```
+
+3. Get Credential
+
+   ```bash
+   gcloud container clusters get-credentials mycluster --zone=us-central1-a
+   ```
+
+4. change PROJECT_ID, sercret and refresh token in authserver-deployment.yaml
+
+5. create image for authserver and store to artifact registry
+
+```bash
+docker build -t gcr.io/<PROJECT_ID>/authserver .
+docker push gcr.io/<PROJECT_ID>/authserver
+```
+
+6. Deploy to GKE
+
+```bash
+kubectl apply -f mongodb-deployment.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f authserver-deployment.yaml
+```
+
+7. Get pods
+
+```bash
+kubectl get pods
+kubectl get service
+```
 
 ## API Endpoints
 
